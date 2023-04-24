@@ -1,27 +1,25 @@
 "use client";
 
-import { useCallback, useState } from "react";
-import BurgerButton from "./BurgerButton";
+import { useState } from "react";
 import Logo from "./Logo";
-import MobileNav from "./MobileNav";
 import Nav from "./Nav";
+import UserMenu from "./userMenu/UserMenu";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleNav = () => {
+  const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const closeNav = () => {
+  const closeMenu = () => {
     setIsOpen(false);
   };
   return (
-    <header className="relative flex justify-between items-center px-2 w-full bg-primary-400 text-white sm:pl-6 sm:pr-4 sm:text-lg">
+    <header className="flex justify-between items-center px-2 w-full bg-primary-400 text-white sm:pl-6 sm:pr-4 sm:text-lg">
       <Logo />
       <Nav />
-      <BurgerButton onClick={toggleNav} isOpen={isOpen} />
-      <MobileNav onClick={closeNav} isOpen={isOpen} />
+      <UserMenu toggleMenu={toggleMenu} closeMenu={closeMenu} isOpen={isOpen} />
     </header>
   );
 };

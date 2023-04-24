@@ -7,11 +7,6 @@ const Nav = () => {
     <nav className="hidden sm:block">
       <ul className="flex">
         <li>
-          <Link href="/" className="nav-link px-4">
-            Home
-          </Link>
-        </li>
-        <li>
           <Link href="/portfolio" className="nav-link px-4">
             Portfolio
           </Link>

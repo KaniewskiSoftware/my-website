@@ -4,22 +4,12 @@ import Link from "next/link";
 
 interface MobileNavProps {
   onClick: () => void;
-  isOpen: boolean;
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({ onClick, isOpen }) => {
+const MobileNav: React.FC<MobileNavProps> = ({ onClick }) => {
   return (
-    <nav
-      className={`${
-        isOpen ? "block" : "hidden"
-      } absolute top-12 right-0 w-[40vw] rounded-bl-xl overflow-hidden bg-primary-400`}
-    >
+    <nav className="sm:hidden border-r-2 border-white">
       <ul onClick={onClick} className="text-center">
-        <li>
-          <Link href="/" className="nav-link">
-            Home
-          </Link>
-        </li>
         <li>
           <Link href="/portfolio" className="nav-link">
             Portfolio
