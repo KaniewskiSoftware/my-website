@@ -17,7 +17,7 @@ const Header = () => {
     setIsOpen(false);
   };
   return (
-    <header className="relative flex justify-between items-center px-2 w-full bg-primary-400 text-white lg:pl-6 lg:pr-4 xl:text-lg">
+    <header className="relative flex justify-between items-center px-2 w-full bg-primary-400 text-white sm:pl-6 sm:pr-4 sm:text-lg">
       <Logo />
       <Nav />
       <BurgerButton onClick={toggleNav} isOpen={isOpen} />

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const Logo = () => {
   const router = useRouter();
   return (
-    <div className="relative w-[66.48px] h-[48px] xl:w-[83.1px] xl:h-[60px]">
+    <div className="relative w-[66.48px] h-[48px] sm:w-[83.1px] sm:h-[60px]">
       <Image
         className="cursor-pointer p-2.5"
         src="/images/logo.png"
