@@ -9,5 +9,5 @@ body,
 }
 
 .nav-link {
-  @apply block py-3 hover:bg-primary-300 active:bg-primary-200;
+  @apply block py-3 hover:bg-primary-300 active:bg-primary-200 xl:py-4;
 }
