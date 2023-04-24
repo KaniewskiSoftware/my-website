@@ -1,3 +1,4 @@
+import Header from "./components/header/Header";
 import "./globals.css";
 import { Lato } from "next/font/google";
 
@@ -18,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body className={lato.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
