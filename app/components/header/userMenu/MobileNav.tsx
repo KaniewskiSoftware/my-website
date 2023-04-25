@@ -1,15 +1,14 @@
 "use client";
 
+import { HeaderContext } from "@/context/header.context";
+import { useContext } from "react";
 import Link from "next/link";
 
-interface MobileNavProps {
-  onClick: () => void;
-}
-
-const MobileNav: React.FC<MobileNavProps> = ({ onClick }) => {
+const MobileNav = () => {
+  const { dispatch } = useContext(HeaderContext);
   return (
     <nav className="sm:hidden border-r-2 border-white">
-      <ul onClick={onClick} className="text-center">
+      <ul onClick={() => dispatch({ type: "CLOSE" })} className="text-center">
         <li>
           <Link href="/portfolio" className="nav-link">
             Portfolio

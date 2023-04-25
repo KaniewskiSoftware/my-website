@@ -1,25 +1,20 @@
 "use client";
 
+import { useContext } from "react";
+import { HeaderContext } from "@/context/header.context";
 import Avatar from "../../Avatar";
 import BurgerButton from "./BurgerButton";
 import MenuItem from "./MenuItem";
 import MobileNav from "./MobileNav";
 
-interface UserMenuProps {
-  toggleMenu: () => void;
-  closeMenu: () => void;
-  isOpen: boolean;
-}
 
-const UserMenu: React.FC<UserMenuProps> = ({
-  toggleMenu,
-  closeMenu,
-  isOpen,
-}) => {
+
+const UserMenu = () => {
+  const { state } = useContext(HeaderContext);
   return (
     <div>
-      <BurgerButton onClick={toggleMenu} isOpen={isOpen} />
-      {isOpen && (
+      <BurgerButton />
+      {state.isOpen && (
         <div
           className="
             flex
@@ -33,7 +28,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             text-center
             "
         >
-          <MobileNav onClick={closeMenu} />
+          <MobileNav />
           <div className="flex flex-col items-center justify-center">
             <div className="mt-4 mb-2">
               <Avatar big />
