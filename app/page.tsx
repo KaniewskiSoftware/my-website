@@ -1,5 +1,5 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="text-text">Hello</div>
+    <div>HomePage</div>
   );
 }
