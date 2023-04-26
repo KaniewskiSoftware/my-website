@@ -103,7 +103,7 @@ const Modal: React.FC<ModalProps> = ({
           <article
             className="
               w-full
-              h-full
+              h-[fit-content]
               md:h-auto
               relative
               flex
@@ -149,7 +149,7 @@ const Modal: React.FC<ModalProps> = ({
             </div>
             {/* Body */}
             {body && (
-              <div className="relative p-6 flex-auto border-b-[1px]">
+              <div className="relative p-6 flex-auto">
                 {body}
               </div>
             )}
@@ -168,6 +168,8 @@ const Modal: React.FC<ModalProps> = ({
                   items-center
                   gap-4
                   w-full
+                  pb-5
+                  border-b-[1px]
                 "
               >
                 {secondaryAction && secondaryActionLabel && (
