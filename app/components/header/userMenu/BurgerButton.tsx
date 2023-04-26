@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { HeaderContext } from "@/context/header.context";
+import { HeaderContext } from "@/app/components/header/header.context";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Avatar from "../../Avatar";
 

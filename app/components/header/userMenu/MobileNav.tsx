@@ -1,6 +1,6 @@
 "use client";
 
-import { HeaderContext } from "@/context/header.context";
+import { HeaderContext } from "@/app/components/header/header.context";
 import { useContext } from "react";
 import Link from "next/link";
 

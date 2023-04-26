@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { HeaderContext } from "@/context/header.context";
+import { HeaderContext } from "@/app/components/header/header.context";
 import Avatar from "../../Avatar";
 import BurgerButton from "./BurgerButton";
 import MenuItem from "./MenuItem";
