@@ -8,8 +8,6 @@ import MenuItem from "./MenuItem";
 import MobileNav from "./MobileNav";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 
-
-
 const UserMenu = () => {
   const registerModal = useRegisterModal();
   const { state } = useContext(HeaderContext);
