@@ -6,10 +6,12 @@ import Avatar from "../../Avatar";
 import BurgerButton from "./BurgerButton";
 import MenuItem from "./MenuItem";
 import MobileNav from "./MobileNav";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 
 
 const UserMenu = () => {
+  const registerModal = useRegisterModal();
   const { state } = useContext(HeaderContext);
   return (
     <div>
@@ -35,7 +37,7 @@ const UserMenu = () => {
             </div>
             <div className="mt-auto">
               <MenuItem onClick={() => {}} label="Log In" />
-              <MenuItem onClick={() => {}} label="Register" />
+              <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
             </div>
           </div>
         </div>

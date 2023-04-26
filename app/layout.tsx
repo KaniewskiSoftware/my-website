@@ -1,9 +1,10 @@
 import Header from "./components/header/Header";
+import RegisterModal from "./components/modals/RegisterModal";
 import "./globals.css";
 import { Lato } from "next/font/google";
 
 const lato = Lato({
-  weight: ["400", "700"],
+  weight: ["300", "400", "700"],
   subsets: ["latin-ext"],
 });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${lato.className} text-text`}>
+        <RegisterModal />
         <Header />
         {children}
       </body>
