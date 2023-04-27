@@ -1,5 +1,6 @@
 import Header from "./components/header/Header";
 import RegisterModal from "./components/modals/RegisterModal";
+import LoginModal from "./components/modals/LoginModal";
 import "./globals.css";
 import { Lato } from "next/font/google";
 import ToasterProvider from "./providers/ToasterProvider";
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${lato.className} text-text`}>
         <ToasterProvider />
         <RegisterModal />
+        <LoginModal />
         <Header />
         {children}
       </body>
