@@ -22,7 +22,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const { state } = useContext(HeaderContext);
   return (
     <div>
-      <BurgerButton />
+      <BurgerButton userImage={currentUser?.image} />
       {state.isOpen && (
         <div
           className="
@@ -42,7 +42,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             {currentUser ? (
               <>
                 <div className="mt-4 mb-2">
-                  <Avatar big />
+                  <Avatar big src={currentUser?.image} />
                 </div>
                 <div className="mt-auto">
                   <MenuItem onClick={() => {}} label="My Account" />

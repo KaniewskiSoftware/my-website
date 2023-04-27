@@ -83,14 +83,14 @@ const LoginModal = () => {
         label="Continue with Google"
         icon={FcGoogle}
         disabled={isLoading}
-        onClick={() => {}}
+        onClick={() => signIn("google")}
       />
       <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
         disabled={isLoading}
-        onClick={() => {}}
+        onClick={() => signIn("github")}
       />
       <div
         className="

@@ -4,9 +4,10 @@ import Image from "next/image";
 
 interface AvatarProps {
   big?: boolean; //size as a number generates problem. Probably something with /app. Check for solutions later.
+  src?: string | null | undefined;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ big }) => {
+const Avatar: React.FC<AvatarProps> = ({ big, src }) => {
   return (
     <div
       className={
@@ -18,7 +19,7 @@ const Avatar: React.FC<AvatarProps> = ({ big }) => {
         fill
         sizes="60px"
         alt="avatar"
-        src="/images/placeholder.jpg"
+        src={src || "/images/placeholder.jpg"}
       />
     </div>
   );

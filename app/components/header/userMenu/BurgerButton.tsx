@@ -5,7 +5,13 @@ import { HeaderContext } from "@/app/components/header/header.context";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Avatar from "../../Avatar";
 
-const BurgerButton = () => {
+interface BurgerButtonProps {
+  userImage?: string | null | undefined;
+}
+
+const BurgerButton: React.FC<BurgerButtonProps> = ({
+  userImage,
+}) => {
   const { state, dispatch } = useContext(HeaderContext);
   return (
     <button
@@ -14,7 +20,7 @@ const BurgerButton = () => {
     >
       <span className="flex flex-row items-center gap-1.5 p-1.5 border border-white rounded-full">
         {state.isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
-        <Avatar />
+        <Avatar src={userImage} />
       </span>
     </button>
   );
