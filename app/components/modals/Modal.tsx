@@ -148,11 +148,7 @@ const Modal: React.FC<ModalProps> = ({
               <h2 className="text-lg font-semibold">{title}</h2>
             </div>
             {/* Body */}
-            {body && (
-              <div className="relative p-6 flex-auto">
-                {body}
-              </div>
-            )}
+            {body && <div className="relative p-6 flex-auto">{body}</div>}
             {/* Footer */}
             <div
               className="
