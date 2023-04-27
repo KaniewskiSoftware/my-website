@@ -1,6 +1,10 @@
 "use client";
 
+import { User } from "@prisma/client";
+import { signOut } from "next-auth/react";
+
 import { useContext } from "react";
+
 import { HeaderContext } from "@/app/components/header/header.context";
 import Avatar from "../../Avatar";
 import BurgerButton from "./BurgerButton";
@@ -9,7 +13,11 @@ import MobileNav from "./MobileNav";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 
-const UserMenu = () => {
+interface UserMenuProps {
+  currentUser?: User | null;
+}
+
+const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const { state } = useContext(HeaderContext);
@@ -32,13 +40,32 @@ const UserMenu = () => {
         >
           <MobileNav />
           <div className="flex flex-col items-center justify-center">
-            <div className="mt-4 mb-2">
-              <Avatar big />
-            </div>
-            <div className="mt-auto">
-              <MenuItem onClick={loginModal.onOpen} label="Log In" />
-              <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
-            </div>
+            {currentUser ? (
+              <>
+                <div className="mt-4 mb-2">
+                  <Avatar big />
+                </div>
+                <div className="mt-auto">
+                  <MenuItem onClick={() => {}} label="My Account" />
+                  <MenuItem
+                    onClick={() => {
+                      signOut();
+                    }}
+                    label="Log Out"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="mt-4 mb-2">
+                  <Avatar big />
+                </div>
+                <div className="mt-auto">
+                  <MenuItem onClick={loginModal.onOpen} label="Log In" />
+                  <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}

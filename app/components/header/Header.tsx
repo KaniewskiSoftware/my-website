@@ -1,11 +1,17 @@
 "use client";
 
+import { User } from "@prisma/client";
+
 import Logo from "./Logo";
 import Nav from "./Nav";
 import UserMenu from "./userMenu/UserMenu";
 import { HeaderContextProvider } from "@/app/components/header/header.context";
 
-const Header = () => {
+interface HeaderProps {
+  currentUser?: User | null;
+}
+
+const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   return (
     <HeaderContextProvider>
       <header
@@ -24,7 +30,7 @@ const Header = () => {
       >
         <Logo />
         <Nav />
-        <UserMenu />
+        <UserMenu currentUser={currentUser} />
       </header>
     </HeaderContextProvider>
   );

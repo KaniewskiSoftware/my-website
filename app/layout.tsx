@@ -4,6 +4,7 @@ import LoginModal from "./components/modals/LoginModal";
 import "./globals.css";
 import { Lato } from "next/font/google";
 import ToasterProvider from "./providers/ToasterProvider";
+import getCurrentUser from "./actions/getCurrentUser";
 
 const lato = Lato({
   weight: ["300", "400", "700"],
@@ -15,18 +16,19 @@ export const metadata = {
   description: "My personal website with blog and portfolio.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const currentUser = await getCurrentUser();
   return (
     <html lang="en">
       <body className={`${lato.className} text-text`}>
         <ToasterProvider />
         <RegisterModal />
         <LoginModal />
-        <Header />
+        <Header currentUser={currentUser}/>
         {children}
       </body>
     </html>
